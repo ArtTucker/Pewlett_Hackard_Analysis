@@ -157,3 +157,17 @@ FROM retirement_info AS ri
 	INNER JOIN departments AS d
 		ON (de.dept_no = d.dept_no)
 WHERE (d.dept_name = 'Sales');
+
+SELECT * FROM current_emp;
+
+SELECT ri.emp_no,
+	ri.first_name,
+	ri.last_name,
+	d.dept_name
+-- INTO sales_devel_retire
+FROM retirement_info AS ri
+	INNER JOIN 	dept_emp AS de
+		ON (ri.emp_no = de.emp_no)
+	INNER JOIN departments AS d
+		ON (de.dept_no = d.dept_no)
+WHERE (d.dept_name = 'Sales');
