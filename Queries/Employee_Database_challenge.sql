@@ -1,4 +1,6 @@
 -- Employee Database Challenge
+
+-- Deliverable 1: The Number of Retiring Employees by Title
 SELECT e.emp_no,
 	e.first_name,
 	e.last_name,
@@ -26,3 +28,17 @@ INTO retiring_titles
 FROM unique_titles
 GROUP BY title
 ORDER BY COUNT DESC;
+
+-- Deliverable 2: The Employees Eligible for the Mentorship Program
+SELECT e.emp_no,
+	e.first_name,
+	e.last_name,
+	e.birth_date,
+	de.from_date,
+	de.to_date,
+	ti.title
+FROM employees AS e
+	INNER JOIN dept_emp AS de
+		ON (e.emp_no = de.emp_no)
+	INNER JOIN titles AS ti
+		ON (e.emp_no = ti.emp_no)
