@@ -1,4 +1,4 @@
-# Pewlett Hackard_Analysis
+# Pewlett Hackard Analysis
  Employee database review with PostgreSQL
 
 ## Overview
